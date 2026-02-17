@@ -1,6 +1,4 @@
-/* ========================
-   GLOBAL STYLES
-======================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -90,26 +88,6 @@ header {
     font-style: italic;
     letter-spacing: 2px;
 }
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    color: #c7a17a;
-}
-
-/* ========================
-   SHOP HEADER
-======================== */
 .shop-header {
     text-align: center;
     padding: 60px 20px;
@@ -126,87 +104,60 @@ nav ul li a:hover {
     opacity: 0.8;
 }
 
-/* ========================
-   MAIN PRODUCTS SECTION
-======================== */
-.products-section {
-    display: flex;
-    gap: 40px;
-    padding: 50px 60px;
-}
-
-/* ========================
-   FILTERS
-======================== */
 .filters {
-    width: 250px;
-    background: white;
+    max-width: 800px;
+    margin: 40px auto;   
+    text-align: center;
+    background: #fff;
     padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    height: fit-content;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.filters h3 {
-    margin-bottom: 20px;
-    font-size: 20px;
-}
-
-.filter-category h4,
-.filter-price h4 {
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.filter-category label {
-    display: block;
-    margin-bottom: 8px;
+.category label {
+    margin: 0 10px;
+    display: inline-block;
     cursor: pointer;
-    font-size: 14px;
 }
 
-.filter-category input {
-    margin-right: 6px;
+.price-range input[type="range"] {
+    width: 60%;
+    margin-top: 10px;
 }
 
-.filter-price input[type="range"] {
-    width: 100%;
-}
-
-/* ========================
-   PRODUCT GRID
-======================== */
-.products-section {
+.product-container {
     display: grid;
-    grid-template-columns: 250px 1fr;
-}
-
-.products-section > .product-card {
-    display: none;
-}
-
-/* Create grid for products */
-.products-section {
-    grid-template-columns: 250px repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
 }
 
 .product-card {
-    background: #fff;
-    border-radius: 10px;
+    background: #ffffff;
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 4px 25px rgba(0,0,0,0.06);
-    transition: 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
 }
 
 .product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 35px rgba(0,0,0,0.1);
+    transform: translateY(-10px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    overflow: hidden;
 }
 
 .product-image img {
     width: 100%;
-    height: 280px;
+    height: 260px;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
 }
 
 .product-info {
@@ -215,81 +166,69 @@ nav ul li a:hover {
 
 .product-info h3 {
     font-size: 18px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    color: #333;
 }
 
 .price {
-    color: #c7a17a;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ff4d6d;
     margin-bottom: 15px;
 }
 
-/* ========================
-   SIZES
-======================== */
 .size {
-    display: flex;
-    gap: 8px;
     margin-bottom: 15px;
 }
 
 .size span {
-    border: 1px solid #ccc;
-    padding: 5px 10px;
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 4px 5px 0 0;
+    border-radius: 20px;
+    border: 1px solid #ddd;
     font-size: 13px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .size span:hover {
-    background: #111;
-    color: white;
-    border-color: #111;
+    background: #ff4d6d;
+    color: #fff;
+    border-color: #ff4d6d;
 }
 
-/* ========================
-   BUTTON
-======================== */
 .add-to-cart {
     width: 100%;
     padding: 10px;
     border: none;
-    background: #111;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #ff4d6d, #ff758f);
     color: white;
-    cursor: pointer;
+    font-size: 14px;
     font-weight: 500;
-    transition: 0.3s;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart i {
+    margin-right: 8px;
 }
 
 .add-to-cart:hover {
-    background: #c7a17a;
-}
-
-/* ========================
-   RESPONSIVE
-======================== */
-@media (max-width: 992px) {
-    .products-section {
-        grid-template-columns: 1fr;
-    }
-
-    .filters {
-        width: 100%;
-    }
+    background: linear-gradient(45deg, #e63950, #ff4d6d);
+    transform: scale(1.05);
 }
 
 @media (max-width: 600px) {
-    header {
-        padding: 15px 20px;
+    body {
+        padding: 20px;
     }
 
-    .products-section {
-        padding: 30px 20px;
-    }
-
-    .shop-header h1 {
-        font-size: 28px;
+    .product-image img {
+        height: 220px;
     }
 }
+
 
 
