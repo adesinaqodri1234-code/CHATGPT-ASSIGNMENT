@@ -1,0 +1,213 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);border-bottom: 3px solid blue;
+    z-index: 1000;
+ }
+
+ nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+ }
+
+ nav h1{
+    font-size: 2rem;
+    font-weight: 1000;
+    color: blue;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+ }
+
+ nav ul {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+ }
+
+ nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;   
+ }
+
+ nav ul li a:hover{
+    color: blue;
+    transform: translateY(-2px);
+    background: lightblue;
+ }
+
+ .logo-street {
+    display: flex;
+    align-items: center;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+}
+
+.sq-box {
+    background: #000;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 2rem;
+    font-weight: 900;
+    border: 3px solid #ff0000;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.humble-text {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #000;
+    line-height: 1.2;
+}
+
+.apparel {
+    font-size: 1rem;
+    color: #ff0000;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+.about-hero{
+    background: linear-gradient(rgba(0 ,0 , 0, 0.8),rgba(0, 0, 0, 0.8)), url(https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1200);
+    padding: 120px 20px;
+    background-size: cover;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.about-hero h1{
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.about-hero p{
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+p{
+    font-size: 1rem;
+    margin-top: 2px;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+.about-story {
+    margin-bottom: 60px;
+}
+
+.about-story h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.about-story p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.mission-vision {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.mission, .vision {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.mission h3, .vision h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #222;
+    font-size: 1.8rem;
+}
+
+.mission i, .vision i {
+    color: #ff0000;
+    font-size: 2rem;
+}
+
+.mission p, .vision p {
+    color: #666;
+    line-height: 1.7;
+}
+
+.values h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #222;
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.value-card {
+    text-align: center;
+    padding: 40px 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+}
+
+.value-card i {
+    font-size: 3rem;
+    color: #ff0000;
+    margin-bottom: 20px;
+}
+
+.value-card h4 {
+    margin-bottom: 15px;
+    color: #222;
+    font-size: 1.4rem;
+}
+
+.value-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+
+
+
+
