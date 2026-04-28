@@ -148,13 +148,14 @@ body {
 }
 
 .property-hero {
-    background: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6');
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6');
     background-size: cover;
     background-position: center;
     color: #fff;
     text-align: center;
     padding: 120px 0 100px;
-}
+}+
 
 .property-hero h1 {
     font-size: 48px;
