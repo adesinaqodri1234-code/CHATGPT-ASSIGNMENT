@@ -20,8 +20,8 @@ To view the project:
 Contributions to enhance this project are welcome. Please fork the repository and open a pull request with your improvements.
 
 ## Connect with Me
-- [Twitter: @rahman_eshrak](https://twitter.com/rahman_eshrak)
-- [GitHub: @EshrakRahman](https://github.com/EshrakRahman)
+- [Twitter: ](https://twitter.com/SQhumble22)
+- [GitHub: @adesinaqodri1234-code](https://github.com/adseina qodri)
 
 ## License
 This project is open-source and available under the [MIT License](LICENSE).
