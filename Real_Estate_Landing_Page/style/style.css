@@ -692,3 +692,30 @@ label {
     .header-features-section .feature-title { font-size: 2rem; }
     .cards { grid-template-columns: 1fr; }
 }
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;
+    background: #69B99D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.logo-name {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1F2744;
+}
