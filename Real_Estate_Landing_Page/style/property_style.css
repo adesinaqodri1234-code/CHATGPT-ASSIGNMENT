@@ -155,8 +155,9 @@ body {
     color: #fff;
     text-align: center;
     padding: 120px 0 100px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
 }
-
 .property-hero h1 {
     font-size: 48px;
     margin-bottom: 20px;
@@ -286,4 +287,53 @@ body {
     font-size: 1.4rem;
     font-weight: 700;
     color: #1F2744;
+}
+
+
+body {
+    padding: 0 !important;
+}
+
+main {
+    width: 100%;
+}
+
+.property-section {
+    width: 100%;
+    padding: 80px 5%;
+    background: #fff;
+}
+
+.property-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.property-price {
+    font-weight: 700;
+    color: #69B99D;  /* FIX: changed from yellow to your brand green */
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 28px;
+    background-color: #69B99D;
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    border: 2px solid #69B99D;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: #69B99D !important;
+}
+
+.list-property {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
 }

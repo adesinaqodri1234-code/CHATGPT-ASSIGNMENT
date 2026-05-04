@@ -355,3 +355,28 @@ body {
     font-weight: 700;
     color: #1F2744;
 }
+
+
+body {
+    padding: 0 !important;
+}
+
+main {
+    width: 100%;
+}
+
+.contact-hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.contact-section {
+    width: 100%;
+    padding: 80px 5%;
+    background: #fff;
+}
+
+.contact-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+}
