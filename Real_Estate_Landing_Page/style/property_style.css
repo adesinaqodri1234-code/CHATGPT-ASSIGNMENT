@@ -108,17 +108,39 @@ body {
 
 .header-section {
     width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 0 40px;  /* ← add this */
+}
+
 }
 
 .navbar {
     width: 100%;
-    height: 120px;
-    padding: var(--spacing-md) 0;
+    height: 80px;
+    padding: 0 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    flex-wrap: nowrap;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
+
+.navbar .links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: nowrap;
+}
+
+.navbar a {
+    padding: 0 10px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
 
 .navbar .links {
     display: flex;
@@ -286,7 +308,8 @@ body {
     font-family: 'Rubik', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #1F2744;
+    color: #69b99d;
+    white-space: nowrap;
 }
 
 
