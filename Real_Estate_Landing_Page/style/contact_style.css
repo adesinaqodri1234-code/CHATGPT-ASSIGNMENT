@@ -1,6 +1,4 @@
 :root {
-    /* Font style */
-
     --primary-font-family: 'Poppins', sans-serif;
     --title-font-family: 'Rubik', sans-serif;
     --h1-font-size: 64px;
@@ -10,9 +8,6 @@
     --font-size-md: 18px;
     --font-size-regular: 16px;
     --font-size-small: 12px;
-
-/*    Color style */
-
     --primary-acent-color: #69B99D;
     --primary-bg-color: #F5F5F5;
     --card-bag-color: #DEDCDA;
@@ -20,16 +15,18 @@
     --text-light: #8E8E8E;
     --bg-white: #fff;
     --title-color: #1F2744;
-
-
-    /*    Spacing style */
-
     --spacing-sm: 8px;
     --spacing-md: 16px;
     --spacing-lg: 32px;
     --spacing-xl: 64px;
     --standard-width: 1144px;
+}
 
+/* FIX: * reset must come before body so it doesn't override body styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -37,44 +34,43 @@ body {
     color: var(--text-light);
     width: 100%;
     margin: 0;
+    padding: 0; /* FIX: removed padding that was pushing layout off */
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-    padding: var(--spacing-sm);
     background-color: #F5F5F5;
-    position: relative;
     overflow-x: hidden;
 }
 
 .wrapper {
-    width: 100%;
-    max-width: var(--standard-width);
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
+
 .title-color {
     color: var(--title-color);
 }
 
+/* ================= BUTTONS ================= */
 .button-with-bg {
-    padding: 12px 45px;
-    margin-left: var(--spacing-lg);
+    padding: 12px 28px;
     background-color: var(--primary-acent-color);
     color: var(--bg-white);
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    max-width: 100px;
     border: 1px solid var(--primary-acent-color);
+    border-radius: 8px;
     text-decoration: none;
-    transition: .3s ease-in-out;
+    font-weight: 600;
+    font-family: var(--primary-font-family);
+    font-size: var(--font-size-regular);
     cursor: pointer;
+    transition: 0.3s ease-in-out;
+    display: inline-block;
 }
 
 .button-with-bg:hover {
-    background-color: var(--bg-white);
+    background-color: transparent;
     color: var(--primary-acent-color);
-    border: 1px solid var(--primary-acent-color);
 }
 
 .button-without-bg {
@@ -82,9 +78,10 @@ body {
     background-color: transparent;
     color: var(--primary-acent-color);
     font-size: var(--font-size-regular);
+    font-family: var(--primary-font-family);
     cursor: pointer;
-    transition: transform .3s ease;
-
+    transition: transform 0.3s ease;
+    text-decoration: none;
 }
 
 .button-without-bg:hover {
@@ -92,14 +89,14 @@ body {
 }
 
 .square-tag {
-    padding: 12px 25px;
-    background-color: var(--light-background);
-    max-width: 120px;
-    display: flex;
-    justify-content: center;
-    font-size: var(--font-size-md);
-    color: var(--primary-acent-color);
-    text-transform: uppercase;
+    display: inline-block;
+    padding: 6px 14px;
+    background: #e8f8f5;
+    color: #1abc9c;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 6px;
+    margin-bottom: 15px;
 }
 
 .subtitle {
@@ -110,78 +107,82 @@ body {
     margin-bottom: 16px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
+/* ================= NAVBAR ================= */
 .header-section {
     width: 100%;
-    height: 754px;
+    /* FIX: removed fixed height: 754px — contact page has no hero image needing it */
 }
 
 .navbar {
     width: 100%;
-    height: 120px;
-    padding: var(--spacing-md) 0;
+    height: 80px;
+    padding: var(--spacing-md) 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    position: relative;
+    z-index: 10;
+}
+
+/* FIX: nav-brand/nav-logo/nav-site-name to match the fixed HTML */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo {
+    width: 44px;
+    height: 44px;
+    background: #69B99D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.nav-site-name {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1F2744;
 }
 
 .navbar .links {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-.navbar a{
-    padding: 0 calc(var(--spacing-md)* 1.8);
+.navbar .links a {
+    padding: 0 calc(var(--spacing-md) * 1.2);
     text-decoration: none;
     color: var(--text-light);
     font-size: var(--font-size-regular);
     font-weight: 500;
-    transition: transform .3s ease;
+    transition: color 0.3s ease;
 }
 
-.navbar a:hover {
+.navbar .links a:hover {
     color: var(--primary-acent-color);
-    transform: scale(1.05);
 }
 
 .navbar .navbar-buttons {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-left: var(--spacing-xl);
-}
-
-.header-features-section .feature-img {
-    position: absolute; /* position to the body */
-    top: 0;
-    left: 50%;
-    z-index: -1;
-}
-
-.header-features-section .feature-title {
-    font-family: var(--title-font-family);
-    font-weight: bold;
-    font-size: var(--h1-font-size);
-    width: 60%;
-    margin: var(--spacing-lg) 0;
-}
-
-.header-features-section .feature-description {
-    font-size: var(--font-size-regular);
-    width: 45%;
-    margin: 0 0 var(--spacing-lg) 0;
+    gap: 16px;
 }
 
 /* ================= CONTACT HERO ================= */
 .contact-hero {
+    width: 100%;
     background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
                 url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200') center/cover no-repeat;
     padding: 120px 20px;
@@ -193,6 +194,8 @@ body {
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 15px;
+    font-family: var(--title-font-family);
+    color: #fff;
 }
 
 .contact-hero-content p {
@@ -207,9 +210,10 @@ body {
     gap: 50px;
     padding: 90px 8%;
     background: #f8f9fb;
+    width: 100%;
 }
 
-/* ================= CONTACT INFO CARDS ================= */
+/* ================= INFO CARDS ================= */
 .contact-info {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -221,7 +225,7 @@ body {
     padding: 35px 25px;
     border-radius: 16px;
     box-shadow: 0 12px 35px rgba(0,0,0,0.06);
-    transition: 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .info-card:hover {
@@ -232,12 +236,14 @@ body {
     font-size: 22px;
     color: #1abc9c;
     margin-bottom: 15px;
+    display: block; /* FIX: block so margin-bottom actually works */
 }
 
 .info-card h3 {
     font-size: 17px;
     margin-bottom: 10px;
     font-weight: 600;
+    color: var(--title-color);
 }
 
 .info-card p {
@@ -246,7 +252,19 @@ body {
     margin-bottom: 6px;
 }
 
-/* ================= CONTACT FORM SECTION ================= */
+/* FIX: make phone/email links in info cards look natural */
+.info-card a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 14px;
+}
+
+.info-card a:hover {
+    color: #1abc9c;
+}
+
+/* ================= CONTACT FORM ================= */
 .contact-form-section {
     background: #fff;
     padding: 45px;
@@ -258,13 +276,19 @@ body {
     font-size: 22px;
     margin-bottom: 25px;
     font-weight: 600;
+    color: var(--title-color);
 }
 
-/* ================= FORM ================= */
+/* FIX: .contact-form is now a div not a form element — styles still apply */
 .contact-form .form-group {
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
+}
+
+/* FIX: .input-wrap ensures each input in the row takes equal space */
+.contact-form .input-wrap {
+    flex: 1;
 }
 
 .contact-form input,
@@ -274,7 +298,10 @@ body {
     border-radius: 10px;
     border: 1px solid #ddd;
     font-size: 14px;
-    transition: 0.3s ease;
+    font-family: var(--primary-font-family);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+    color: var(--title-color);
 }
 
 .contact-form input:focus,
@@ -284,9 +311,29 @@ body {
     outline: none;
 }
 
+/* FIX: subject input needs its own margin so it's spaced from the row above */
+.contact-form > input[id="subject"] {
+    display: block;
+    margin-bottom: 0;
+}
+
 .contact-form textarea {
     resize: none;
     margin-top: 15px;
+    display: block;
+}
+
+/* FIX: sr-only for accessible hidden labels */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .submit-btn {
@@ -296,13 +343,14 @@ body {
     padding: 14px 28px;
     border: none;
     border-radius: 10px;
+    font-size: var(--font-size-regular);
+    font-family: var(--primary-font-family);
     font-weight: 600;
     cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.submit-btn i {
-    margin-right: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .submit-btn:hover {
@@ -314,10 +362,11 @@ body {
 @media (max-width: 992px) {
     .contact-content {
         grid-template-columns: 1fr;
+        padding: 60px 5%;
     }
 
     .contact-info {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .contact-form .form-group {
@@ -327,56 +376,30 @@ body {
     .contact-hero-content h1 {
         font-size: 36px;
     }
+
+    .navbar .links a {
+        padding: 0 calc(var(--spacing-md) * 0.8);
+    }
+
+    .navbar .navbar-buttons {
+        margin-left: var(--spacing-md);
+    }
 }
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+@media (max-width: 768px) {
+    .navbar .links a:not(.button-with-bg):not(.button-without-bg) {
+        display: none;
+    }
 
-.logo-icon {
-    width: 44px;
-    height: 44px;
-    background: #69B99D;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-family: 'Rubik', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-}
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
 
-.logo-name {
-    font-family: 'Rubik', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #1F2744;
-}
+    .contact-hero-content h1 {
+        font-size: 28px;
+    }
 
-
-body {
-    padding: 0 !important;
-}
-
-main {
-    width: 100%;
-}
-
-.contact-hero {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-}
-
-.contact-section {
-    width: 100%;
-    padding: 80px 5%;
-    background: #fff;
-}
-
-.contact-grid {
-    max-width: 1200px;
-    margin: 0 auto;
+    .contact-form-section {
+        padding: 25px;
+    }
 }
